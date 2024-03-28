@@ -52,8 +52,8 @@
         </div>
 
         <div class="form-group">
-            <button class="btn btn-primary">{{ contactMode === 'add' ? 'Thêm mới' : 'Cập nhật' }}</button>
-            <button v-if="contactMode === 'edit'" type="button" class="ml-2 btn btn-danger" @click="deleteContact">Xóa</button>
+            <button class="btn btn-primary">{{ isEditMode ? 'Lưu' : 'Thêm' }}</button>
+            <button v-if="isEditMode" type="button" class="ml-2 btn btn-danger" @click="deleteContact">Xóa</button>
         </div>
     </Form>
 </template>
@@ -94,9 +94,15 @@ export default {
         return {
             contactLocal: { ...this.contact },
             contactFormSchema,
-            contactMode: this.contact.id ? 'edit' : 'add',
         };
     },
+
+    computed: {
+        isEditMode() {
+            return !!this.contactLocal._id;
+        }
+    },
+
     methods: {
         submitContact() {
             this.$emit("submit:contact", this.contactLocal);

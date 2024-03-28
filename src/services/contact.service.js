@@ -24,7 +24,7 @@ class ContactService {
         return (await this.api.put(`/${id}`, data)).data;
     }
     
-    async detele(id) {
+    async delete(id) {
         return (await this.api.delete(`/${id}`)).data;
     }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page">
     <h4>Thêm mới liên hệ</h4>
     <ContactForm :contact="{}" @submit:contact="addContact" />
     <p>{{ message }}</p>

@@ -58,8 +58,10 @@ export default {
                 try {
                     await ContactService.delete(this.contact._id);
                     this.$router.push({ name: "contactbook"});
+                    this.message = "Liên hệ đã được xóa thành công";
                 } catch (error) {
                     console.log(error);
+                    this.message = "Liên hệ đã được xóa thành công";
                 }
             }
         },
