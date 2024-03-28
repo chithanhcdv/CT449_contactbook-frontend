@@ -134,9 +134,9 @@ export default {
             }
         },
 
-        goToAddContact() {
+        gotoAddContact() {
             this.$router.push({ name: "contact.add" });
-        },
+        },    
     },
     
     mounted() {

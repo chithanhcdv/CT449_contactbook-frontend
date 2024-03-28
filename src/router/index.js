@@ -19,6 +19,12 @@ const routes = [
         name: "contact.edit",
         component: () => import("@/views/ContactEdit.vue"),
         props: true 
+    },
+
+    {
+        path: "/contacts/add", // Đường dẫn cho màn hình thêm mới
+        name: "contact.add",   // Tên cho màn hình thêm mới
+        component: () => import("@/views/ContactAdd.vue") // Sử dụng component ContactAdd.vue
     }
 ];
 
